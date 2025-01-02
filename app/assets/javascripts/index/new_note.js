@@ -162,6 +162,10 @@ OSM.NewNote = function (map) {
       newNoteMarker.dragging.disable();
 
       createNote(location, text, (feature) => {
+        if (typeof OSM.user === 'undefined') {
+          var anonymousNotesCount = Number(localStorage.getItem("anonymousNotesCount"))
+          localStorage.setItem("anonymousNotesCount",anonymousNotesCount+1)
+        }
         content.find("textarea").val("");
         addCreatedNoteMarker(feature);
         OSM.router.route("/note/" + feature.properties.id);
