@@ -8,6 +8,10 @@
     <p class="alert alert-warning"><%= t ".anonymous_warning_html",
                                          :log_in => link_to(t(".anonymous_warning_log_in"), login_path(:referer => new_note_path)),
                                          :sign_up => link_to(t(".anonymous_warning_sign_up"), user_new_path) %></p>
+    <p class="alert alert-warning" id="new-note-counter-warning" hidden>
+      <%= t ".counter_warning_html",
+            :sign_up => link_to(t(".anonymous_warning_sign_up"), user_new_path),
+            :contribute_by_yourself => link_to(t(".counter_warning_link.text"), t(".counter_warning_link.url")) %></p>
   <% end %>
   <p class="alert alert-warning" id="new-note-zoom-warning" hidden><%= t "javascripts.site.createnote_disabled_tooltip" %></p>
   <form action="#">

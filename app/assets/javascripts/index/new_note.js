@@ -152,6 +152,11 @@ OSM.NewNote = function (map) {
       .on("input", updateControls)
       .focus();
 
+    var anonymousNotesCount = Number(localStorage.getItem("anonymousNotesCount"))
+    if (anonymousNotesCount > 10) {
+      content.find("#new-note-counter-warning").prop("hidden", false);
+    }
+
     content.find("input[type=submit]").on("click", function (e) {
       const location = newNoteMarker.getLatLng().wrap();
       const text = content.find("textarea").val();
@@ -163,7 +168,6 @@ OSM.NewNote = function (map) {
 
       createNote(location, text, (feature) => {
         if (typeof OSM.user === 'undefined') {
-          var anonymousNotesCount = Number(localStorage.getItem("anonymousNotesCount"))
           localStorage.setItem("anonymousNotesCount",anonymousNotesCount+1)
         }
         content.find("textarea").val("");
