@@ -3081,7 +3081,7 @@ en:
       anonymous_warning_html: "You are not logged in. Please %{log_in} or %{sign_up} if you want to receive updates for your note."
       anonymous_warning_log_in: "log in"
       anonymous_warning_sign_up: "sign up"
-      counter_warning_html: "You've already posted more than 10 anonymous notes. That's great for the community, but it's time to  %{sign_up} and learn how to %{contribute_by_yourself}."
+      counter_warning_html: "You've already posted (N) anonymous notes. That's great for the community, but it's time to  %{sign_up} and learn how to %{contribute_by_yourself}."
       counter_warning_link:
         text: "contribute by yourself"
         url: https://wiki.openstreetmap.org/wiki/Beginners%27_guide

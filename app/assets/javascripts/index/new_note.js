@@ -154,6 +154,8 @@ OSM.NewNote = function (map) {
 
     var anonymousNotesCount = Number(localStorage.getItem("anonymousNotesCount"))
     if (anonymousNotesCount > 10) {
+      var originalHtml = content.find("#new-note-counter-warning").html();
+      content.find("#new-note-counter-warning").html(originalHtml.replace('(N)', anonymousNotesCount));
       content.find("#new-note-counter-warning").prop("hidden", false);
     }
 
